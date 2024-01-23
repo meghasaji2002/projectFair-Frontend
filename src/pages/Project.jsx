@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard'
 import { Row,Col } from 'react-bootstrap'
 import { allProjectAPI } from '../services/allAPI'
 import { Link } from 'react-router-dom'
+import './Project.css'
 
 function Project() {
 
@@ -49,17 +50,17 @@ useEffect(()=>{
     <div>
       <Header/>
 
-      <div  style={{padding:'40px'}} className='text-center threeProjects'>
-         <h2 >All Projects</h2>
+      <div  style={{padding:'40px'}} className=' d-flex align-items-center justify-content-center flex-column'>
+         <h2 className='text-center' >All Projects</h2>
         <div className='d-flex align-items-center justify-content-center mt-5 '>
-          <div className='w-25 d-flex'> 
-          <input value={searchKey} onChange={(e)=>setSearchKey(e.target.value)} style={{border:'2px solid orange',padding:'5px'}}  className='form-control' type="text" placeholder='search project using technologies' />
+          <div className='search-box d-flex'> 
+          <input value={searchKey} onChange={(e)=>setSearchKey(e.target.value)} style={{border:'2px solid orange',padding:'5px'}}  className='form-control ' type="text" placeholder='search project using technologies' />
           <i class="fa-solid fa-magnifying-glass fa-rotate-90" style={{marginLeft:'-40px',color:'black',fontSize:'20px'}}></i>
           </div>
           </div>
           <Row className='mt-5  container-fluid'>
         {allProject?.length>0?
-        allProject.map((item)=>(<Col sm={12 } md={6 } lg={4}>
+        allProject.map((item)=>(<Col sm={12 } md={6 } lg={4} className='d-flex align-items-center justify-content-center'>
 
           <ProjectCard projects={item}/>
         </Col>)):

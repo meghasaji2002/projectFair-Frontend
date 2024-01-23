@@ -114,7 +114,7 @@ const handlelogin = async(e)=>{
                     <div className='col-lg-6'>
                          <div className='d-flex align-items-center justify-content-center flex-column'>
                             <h2 className=' fw-bold'> <i class="fa-brands fa-stack-overflow"></i>Project Fair</h2>
-                             <h5 className='ms-5 mt-4 '>
+                             <h5 className='text-center mt-4 '>
                                 {
                                     registerForm?"Sign Up to your account":"Sign In to your account"
                                 }
@@ -137,17 +137,17 @@ const handlelogin = async(e)=>{
                                 </Form.Group>
                                     
                                      {registerForm?
-                                        <div className='mt-4'>
-                                            <Button onClick={handleRegister}  className='btn btn-info rounded' variant="primary" type="submit">
+                                        <div className='mt-4 d-flex align-items-center justify-content-center flex-column'>
+                                            <Button onClick={handleRegister}  className='btn btn-info rounded mt-2' variant="primary" type="submit">
                                             Register
                                           </Button>
-                                          <p >Already a user?Click here to <Link to={'/login'} style={{color:'blue'}}>Login</Link></p>
+                                          <p className='mt-2'>Already a user?Click here to <Link to={'/login'} style={{color:'blue'}}>Login</Link></p>
                                         </div>:
-                                        <div className='mt-4'>
-                                        <Button onClick={handlelogin}  className='btn btn-info rounded'  type="submit">
+                                        <div className='mt-4 d-flex align-items-center justify-content-center flex-column'>
+                                        <Button onClick={handlelogin}  className='btn btn-info rounded px-5'  type="submit">
                                         Login
                                       </Button>
-                                      <p >New User?Click here to <Link to={'/register'} style={{color:'blue'}}>Register</Link></p>
+                                      <p className='mt-2'>New User?Click here to <Link to={'/register'} style={{color:'blue'}}>Register</Link></p>
                                     </div>
 
                                         }
