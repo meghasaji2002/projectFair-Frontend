@@ -41,7 +41,7 @@ function Auth({register}) {
   const result = await registerAPI(userData)
   console.log(result.data);
   if(result.status === 200){
-    alert(`${result.data.username} is successfully registered`)
+    toast.success(`${result.data.username} is successfully registered`)
     setUserData({
       username:"",
       email:"",
@@ -50,7 +50,7 @@ function Auth({register}) {
     //navigate to login page
     navigate('/login')
   }
-  else{alert(result.response.data)}
+  else{toast.error(result.response.data)}
 
  }
  }
@@ -62,7 +62,7 @@ const handlelogin = async(e)=>{
   const {email,password} = userData 
 
   if(!email || !password){
-    alert('please fill the form completely')
+    toast.warning('please fill the form completely')
   }
   else{
     //api call
@@ -90,7 +90,7 @@ const handlelogin = async(e)=>{
       
     }
     else{
-      alert(result.response.data)
+      toast.error(result.response.data)
     }
   }
 }

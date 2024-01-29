@@ -72,7 +72,7 @@ function AddProjects() {
       const{title,language, github, website, overview,image} = inputvalue
     
       if(!title || !language ||!github ||!website ||!overview ||!image){
-        alert('please fill the form completely')
+        toast.info('please fill the form completely')
       }
       else{
         //create reqBody 

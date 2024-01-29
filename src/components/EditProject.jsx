@@ -1,10 +1,11 @@
 import React,{useContext, useEffect, useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Row,Col } from 'react-bootstrap';
+import { Row,Col, ToastContainer } from 'react-bootstrap';
 import { BASE_URL } from '../services/baseurl';
 import { updateProjectAPI } from '../services/allAPI';
 import { editProjectResponseContext } from './contexts/ContextShare';
+import { toast } from 'react-toastify';
 
 function EditProject({project}) {
 
@@ -68,7 +69,7 @@ function EditProject({project}) {
             console.log(result);
 
             if (result.status===200) {
-              alert('uploaded successfully')
+              toast.success('uploaded successfully')
               handleClose()
               setEditProjectResponse(result.data)
             }
@@ -86,7 +87,7 @@ function EditProject({project}) {
             console.log(result);
 
             if (result.status===200) {
-              alert('uploaded successfully')
+              toast.success('uploaded successfully')
               handleClose()
               setEditProjectResponse(result.data)
             }
@@ -158,7 +159,7 @@ function EditProject({project}) {
           <Button onClick={handleUpdate} variant="danger" >Update </Button>
         </Modal.Footer>
       </Modal>
-  
+      <ToastContainer autoClose={2000} theme='colored' position='top-center'/>
     </>
   )
 }
